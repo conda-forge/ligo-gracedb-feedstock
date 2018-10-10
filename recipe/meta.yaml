@@ -1,6 +1,6 @@
 {% set name = "ligo-gracedb" %}
-{% set version = "1.28" %}
-{% set sha256 = "a14867eef76f890b339f500fe3d1fb1dc94f3d1b90ad8e148a5ce4f1b5f9243a" %}
+{% set version = "2.0.1" %}
+{% set sha256 = "cd220bf585ecec4067b3bc053a236c1806e31b79799033bba22f3f33fe5ec092" %}
 
 package:
   name: {{ name }}
@@ -10,10 +10,6 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    # patch to workaround script installation problem on windows
-    # will be part of next release
-    - entry-points.patch
 
 build:
   number: 0
