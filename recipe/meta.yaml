@@ -30,17 +30,16 @@ requirements:
     - ligo-common
 
 test:
-  requires:
-    - pytest
   imports:
     - ligo.gracedb.rest
   commands:
     - gracedb --help
 
 about:
-  home: https://wiki.ligo.org/DASWG/GraceDB
+  home: https://wiki.ligo.org/Computing/DASWG/GraceDB
   license: GPL
   license_family: GPL
+  license_file: COPYING
   summary: Gravitational Wave Candidate Event Database
   description: |
     The gravitational-wave candidate event database (GraceDB) is a prototype
