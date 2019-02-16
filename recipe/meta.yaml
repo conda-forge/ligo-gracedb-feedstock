@@ -1,6 +1,6 @@
 {% set name = "ligo-gracedb" %}
-{% set version = "2.1.1" %}
-{% set sha256 = "89af02c3d9bba0971168de14daa1a706f5aed4515c744111a3c51aa9ea5ebb8b" %}
+{% set version = "2.1.2" %}
+{% set sha256 = "bee0fc5dedb16a7a584521116e343cb2ca28e5d0a5114bbc70564879df21d01f" %}
 
 package:
   name: {{ name }}
@@ -10,6 +10,8 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - 0001-Only-install-setup_requires-requirements-for-the-spe.patch
 
 build:
   number: 0
