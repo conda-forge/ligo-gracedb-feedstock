@@ -1,0 +1,14 @@
+diff --git a/ligo/gracedb/cli/client.py b/ligo/gracedb/cli/client.py
+index 8011a6e..d05879d 100644
+--- a/ligo/gracedb/cli/client.py
++++ b/ligo/gracedb/cli/client.py
+@@ -64,8 +64,7 @@ class CommandLineInterface(CommandBase):
+         # Other options
+         parser.add_argument("-s", "--service-url", dest="service",
+             help="GraceDB service URL", metavar="URL", type=str,
+-            default="https://gracedb-dev2.ligo.org/api/")
+-            #default=os.environ.get("GRACEDB_SERVICE_URL", DEFAULT_SERVICE_URL))
++            default=os.environ.get("GRACEDB_SERVICE_URL", DEFAULT_SERVICE_URL))
+         parser.add_argument("-p", "--proxy", dest="proxy", help="HTTP Proxy",
+             default=os.environ.get("HTTP_PROXY", None), metavar="PROXY[:PORT]",
+             type=str)
