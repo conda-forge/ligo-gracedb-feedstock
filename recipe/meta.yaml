@@ -1,6 +1,6 @@
 {% set name = "ligo-gracedb" %}
-{% set version = "2.1.2" %}
-{% set sha256 = "bee0fc5dedb16a7a584521116e343cb2ca28e5d0a5114bbc70564879df21d01f" %}
+{% set version = "2.2.0" %}
+{% set sha256 = "67a4a43fb82f092ed8a8ec20824f7451c63194c168730ada14f64df123019699" %}
 
 package:
   name: {{ name }}
@@ -11,14 +11,15 @@ source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
-    - 0001-Only-install-setup_requires-requirements-for-the-spe.patch
+    - default_server.patch
 
 build:
   number: 0
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   entry_points:
-    - gracedb = ligo.gracedb.cli:main
+    - gracedb = ligo.gracedb.cli.client:main
+    - gracedb_legacy = ligo.gracedb.legacy_cli:main
 
 requirements:
   host:
@@ -27,8 +28,8 @@ requirements:
     - pip
   run:
     - python
-    - six
-    - future
+    - six >=1.10.0
+    - future >=0.15.0
     - ligo-common
 
 test:
@@ -36,6 +37,7 @@ test:
     - ligo.gracedb.rest
   commands:
     - gracedb --help
+    - gracedb_legacy --help
 
 about:
   home: https://wiki.ligo.org/Computing/DASWG/GraceDB
