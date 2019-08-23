@@ -39,9 +39,9 @@ test:
 
 about:
   home: https://wiki.ligo.org/Computing/DASWG/GraceDB
-  license: GPL
+  license: GPL-3.0-or-later
   license_family: GPL
-  license_file: COPYING
+  license_file: LICENSE
   summary: Gravitational Wave Candidate Event Database
   description: |
     The gravitational-wave candidate event database (GraceDB) is a prototype
