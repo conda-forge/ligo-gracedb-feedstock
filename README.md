@@ -3,7 +3,7 @@ About ligo-gracedb
 
 Home: https://wiki.ligo.org/Computing/DASWG/GraceDB
 
-Package license: GPL
+Package license: GPL-3.0-or-later
 
 Feedstock license: BSD 3-Clause
 
