@@ -25,10 +25,11 @@ requirements:
     - setuptools
     - pip
   run:
-    - python
-    - six >=1.10.0
+    - cryptography >=1.7.2
     - future >=0.15.0
     - ligo-common
+    - python
+    - six >=1.10.0
 
 test:
   imports:
