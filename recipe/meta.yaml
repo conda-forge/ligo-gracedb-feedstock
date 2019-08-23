@@ -1,6 +1,6 @@
 {% set name = "ligo-gracedb" %}
-{% set version = "2.2.2" %}
-{% set sha256 = "b37d5de2807150986e40f429c8be04abf25483a4df300070e97ab523640fcadd" %}
+{% set version = "2.3.0" %}
+{% set sha256 = "69e8a86e49a061cd71833023a26fc731171dea855cbf7c4281a3a21c58ec6cc6" %}
 
 package:
   name: {{ name }}
@@ -25,10 +25,11 @@ requirements:
     - setuptools
     - pip
   run:
-    - python
-    - six >=1.10.0
+    - cryptography >=1.7.2
     - future >=0.15.0
     - ligo-common
+    - python
+    - six >=1.10.0
 
 test:
   imports:
@@ -39,9 +40,9 @@ test:
 
 about:
   home: https://wiki.ligo.org/Computing/DASWG/GraceDB
-  license: GPL
+  license: GPL-3.0-or-later
   license_family: GPL
-  license_file: COPYING
+  license_file: LICENSE
   summary: Gravitational Wave Candidate Event Database
   description: |
     The gravitational-wave candidate event database (GraceDB) is a prototype
