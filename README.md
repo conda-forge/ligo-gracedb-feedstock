@@ -1,7 +1,7 @@
 About ligo-gracedb
 ==================
 
-Home: https://wiki.ligo.org/Computing/DASWG/GraceDB
+Home: https://ligo-gracedb.readthedocs.io/
 
 Package license: GPL-3.0-or-later
 
@@ -120,6 +120,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@aepace](https://github.com/aepace/)
 * [@duncanmmacleod](https://github.com/duncanmmacleod/)
-* [@tprestegard](https://github.com/tprestegard/)
 

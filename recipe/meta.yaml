@@ -1,49 +1,58 @@
 {% set name = "ligo-gracedb" %}
-{% set version = "2.4.0" %}
-{% set sha256 = "06360500d2d8e9e48c48dc555e424c57d66bf0ba8e0b1ec0adc9f8e4020e665b" %}
+{% set version = "2.5.0" %}
+{% set sha256 = "d632f9ec5a04e2b954e9a16d97a5041567ab0e75026ef48ea5bda56f5ff00bc7" %}
 
 package:
-  name: {{ name }}
-  version: {{ version }}
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: "{{ PYTHON }} -m pip install . -vv"
   entry_points:
     - gracedb = ligo.gracedb.cli.client:main
     - gracedb_legacy = ligo.gracedb.legacy_cli:main
 
 requirements:
   host:
+    - pip
     - python
     - setuptools
-    - pip
   run:
     - cryptography >=1.7.2
     - future >=0.15.0
     - ligo-common
     - python
-    - six >=1.10.0
+    - six >=1.9.0
 
 test:
   imports:
     - ligo.gracedb.rest
+  requires:
+    - pytest
+    - python >=3.6
   commands:
+    # basic test
     - gracedb --help
     - gracedb_legacy --help
+    # run actual query against database (but don't fail just incase service isn't available)
+    - gracedb search superevents "far<1e-9" --columns superevent_id,far,labels --force-noauth || true
+    # run test suite (without integration tests, which require network)
+    - python -m pytest --pyargs ligo.gracedb -m "not integration"
 
 about:
-  home: https://wiki.ligo.org/Computing/DASWG/GraceDB
-  license: GPL-3.0-or-later
-  license_family: GPL
-  license_file: LICENSE
-  summary: Gravitational Wave Candidate Event Database
+  home: "https://ligo-gracedb.readthedocs.io/"
+  doc_url: "https://ligo-gracedb.readthedocs.io/"
+  dev_url: "https://git.ligo.org/lscsoft/gracedb-client"
+  license: "GPL-3.0-or-later"
+  license_family: "GPL"
+  license_file: "LICENSE"
+  summary: "Gravitational Wave Candidate Event Database"
   description: |
     The gravitational-wave candidate event database (GraceDB) is a prototype
     system to organize candidate events from gravitational-wave searches and
@@ -52,5 +61,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - aepace
     - duncanmmacleod
-    - tprestegard
