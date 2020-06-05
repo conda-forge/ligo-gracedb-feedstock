@@ -1,10 +1,10 @@
 {% set name = "ligo-gracedb" %}
-{% set version = "2.5.0" %}
-{% set sha256 = "d632f9ec5a04e2b954e9a16d97a5041567ab0e75026ef48ea5bda56f5ff00bc7" %}
+{% set version = "2.6.0" %}
+{% set sha256 = "62fa4333912525390855ced0326a6920221f2ad1466c7248df87ebe5cb0e6ab3" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
@@ -13,7 +13,7 @@ source:
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - gracedb = ligo.gracedb.cli.client:main
     - gracedb_legacy = ligo.gracedb.legacy_cli:main
@@ -46,13 +46,13 @@ test:
     - python -m pytest --pyargs ligo.gracedb -m "not integration"
 
 about:
-  home: "https://ligo-gracedb.readthedocs.io/"
-  doc_url: "https://ligo-gracedb.readthedocs.io/"
-  dev_url: "https://git.ligo.org/lscsoft/gracedb-client"
-  license: "GPL-3.0-or-later"
-  license_family: "GPL"
-  license_file: "LICENSE"
-  summary: "Gravitational Wave Candidate Event Database"
+  home: https://ligo-gracedb.readthedocs.io/
+  doc_url: https://ligo-gracedb.readthedocs.io/
+  dev_url: https://git.ligo.org/lscsoft/gracedb-client
+  license: GPL-3.0-or-later
+  license_family: GPL
+  license_file: LICENSE
+  summary: Gravitational Wave Candidate Event Database
   description: |
     The gravitational-wave candidate event database (GraceDB) is a prototype
     system to organize candidate events from gravitational-wave searches and
