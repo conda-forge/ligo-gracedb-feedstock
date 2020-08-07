@@ -28,6 +28,7 @@ requirements:
     - future >=0.15.0
     - ligo-common
     - python
+    - requests >=2.6.0
     - six >=1.9.0
 
 test:
@@ -35,7 +36,6 @@ test:
     - ligo.gracedb.rest
   requires:
     - pytest
-    - python >=3.6
   commands:
     # basic test
     - gracedb --help
@@ -52,12 +52,13 @@ about:
   license: GPL-3.0-or-later
   license_family: GPL
   license_file: LICENSE
-  summary: Gravitational Wave Candidate Event Database
+  summary: A Python package for accessing the GraceDB API
   description: |
-    The gravitational-wave candidate event database (GraceDB) is a prototype
-    system to organize candidate events from gravitational-wave searches and
-    to provide an environment to record information about follow-ups. A simple
-    client tool is provided to submit a candidate event to the database.
+    The Gravitational-wave Candidate Event Database (GraceDB) is a
+    web service designed for aggregating and communicating information
+    about candidate events from gravitational-wave searches and
+    associated follow-ups.  `ligo-gracedb` provides a Python-based
+    client tool for facilitating interactions with the GraceDB API.
 
 extra:
   recipe-maintainers:
