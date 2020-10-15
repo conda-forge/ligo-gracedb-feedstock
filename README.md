@@ -5,14 +5,19 @@ Home: https://ligo-gracedb.readthedocs.io/
 
 Package license: GPL-3.0-or-later
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ligo-gracedb-feedstock/blob/master/LICENSE.txt)
 
-Summary: Gravitational Wave Candidate Event Database
+Summary: A Python package for accessing the GraceDB API
 
-The gravitational-wave candidate event database (GraceDB) is a prototype
-system to organize candidate events from gravitational-wave searches and
-to provide an environment to record information about follow-ups. A simple
-client tool is provided to submit a candidate event to the database.
+Development: https://git.ligo.org/lscsoft/gracedb-client
+
+Documentation: https://ligo-gracedb.readthedocs.io/
+
+The Gravitational-wave Candidate Event Database (GraceDB) is a
+web service designed for aggregating and communicating information
+about candidate events from gravitational-wave searches and
+associated follow-ups.  `ligo-gracedb` provides a Python-based
+client tool for facilitating interactions with the GraceDB API.
 
 
 Current build status
