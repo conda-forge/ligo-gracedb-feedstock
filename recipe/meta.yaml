@@ -1,6 +1,6 @@
 {% set name = "ligo-gracedb" %}
-{% set version = "2.7.2" %}
-{% set sha256 = "380a88c9f4e5003100d6222347d0d91c395096733e7c4adc3492cd77ae59c013" %}
+{% set version = "2.7.3" %}
+{% set sha256 = "142a0b78df2b77e73a8c0e05dbd200bb96bab9fee5e9de4e9359eb18e9b3e907" %}
 
 package:
   name: {{ name|lower }}
@@ -28,7 +28,7 @@ requirements:
     - future >=0.15.0
     - ligo-common
     - python
-    - requests >=2.6.0
+    - requests >=2.16.0
     - six >=1.9.0
 
 test:
