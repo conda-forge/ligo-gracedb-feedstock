@@ -21,13 +21,13 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.5
     - setuptools
   run:
     - cryptography >=1.7.2
     - future >=0.15.0
     - ligo-common
-    - python
+    - python >=3.5
     - requests >=2.6.0
     - six >=1.9.0
 
