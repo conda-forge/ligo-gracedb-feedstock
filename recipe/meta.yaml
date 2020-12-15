@@ -32,16 +32,12 @@ requirements:
     - six >=1.9.0
 
 test:
-  imports:
-    - ligo.gracedb.rest
+  # run_test.py is run automatically
   requires:
     - pytest
   commands:
     # basic test
     - gracedb --help
-    - gracedb_legacy --help
-    # run actual query against database (but don't fail just incase service isn't available)
-    - gracedb search superevents "far<1e-9" --columns superevent_id,far,labels --force-noauth || true
     # run test suite (without integration tests, which require network)
     - python -m pytest --pyargs ligo.gracedb -m "not integration"
 
