@@ -1,6 +1,6 @@
 {% set name = "ligo-gracedb" %}
-{% set version = "2.7.6" %}
-{% set sha256 = "b9932a739e5e7634471ab99d21bd24e9e1c94d9fc62cd74b6cf0fa7e4f11f936" %}
+{% set version = "2.7.7" %}
+{% set sha256 = "9eaf652cdbc8ab97d95d39e7d2301c82eafe392db02c055b9760384eb5255878" %}
 
 package:
   name: {{ name|lower }}
@@ -33,12 +33,15 @@ requirements:
 test:
   # run_test.py is run automatically
   requires:
+    - pip
     - pytest
   commands:
-    # basic test
-    - gracedb --help
+    # check requirements
+    - python -m pip check
     # run test suite (without integration tests, which require network)
     - python -m pytest --pyargs ligo.gracedb -ra -m "not integration"
+    # basic test
+    - gracedb --help
 
 about:
   home: https://ligo-gracedb.readthedocs.io/
