@@ -33,12 +33,15 @@ requirements:
 test:
   # run_test.py is run automatically
   requires:
+    - pip
     - pytest
   commands:
-    # basic test
-    - gracedb --help
+    # check requirements
+    - python -m pip check
     # run test suite (without integration tests, which require network)
     - python -m pytest --pyargs ligo.gracedb -ra -m "not integration"
+    # basic test
+    - gracedb --help
 
 about:
   home: https://ligo-gracedb.readthedocs.io/
