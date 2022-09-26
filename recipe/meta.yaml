@@ -16,7 +16,6 @@ build:
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - gracedb = ligo.gracedb.cli.client:main
-    - gracedb_legacy = ligo.gracedb.legacy_cli:main
 
 requirements:
   host:
@@ -26,6 +25,7 @@ requirements:
   run:
     - cryptography >=1.7.2,<=36.0.2
     - future >=0.15.0
+    - igwn-auth-utils >=0.3.1
     - python >=3.5
     - requests >=2.6.0
     - six >=1.9.0
