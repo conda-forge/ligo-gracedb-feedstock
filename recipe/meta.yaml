@@ -1,6 +1,6 @@
 {% set name = "ligo-gracedb" %}
-{% set version = "2.7.8" %}
-{% set sha256 = "83ba97b1d64e04719385c9be4641d4c9ee40b59e4aa7de15d46aa36449b52d4f" %}
+{% set version = "2.8.0" %}
+{% set sha256 = "dd61d4650446754335d48f3c42d16f0a1198040e8f8e56165b16d50be08146df" %}
 
 package:
   name: {{ name|lower }}
@@ -16,7 +16,6 @@ build:
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - gracedb = ligo.gracedb.cli.client:main
-    - gracedb_legacy = ligo.gracedb.legacy_cli:main
 
 requirements:
   host:
@@ -26,6 +25,7 @@ requirements:
   run:
     - cryptography >=1.7.2,<=36.0.2
     - future >=0.15.0
+    - igwn-auth-utils >=0.3.1
     - python >=3.5
     - requests >=2.6.0
     - six >=1.9.0
@@ -33,6 +33,7 @@ requirements:
 test:
   # run_test.py is run automatically
   requires:
+    - mock
     - pip
     - pytest
   commands:
