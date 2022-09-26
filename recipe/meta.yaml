@@ -33,6 +33,7 @@ requirements:
 test:
   # run_test.py is run automatically
   requires:
+    - mock
     - pip
     - pytest
   commands:
