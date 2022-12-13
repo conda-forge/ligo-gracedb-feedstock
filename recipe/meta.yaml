@@ -23,7 +23,7 @@ requirements:
     - python >=3.5
     - setuptools
   run:
-    - cryptography >=1.7.2,<=36.0.2
+    - cryptography >=1.7.2
     - future >=0.15.0
     - igwn-auth-utils >=0.3.1
     - python >=3.5
