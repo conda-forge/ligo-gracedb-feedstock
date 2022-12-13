@@ -1,6 +1,6 @@
 {% set name = "ligo-gracedb" %}
-{% set version = "2.9.0" %}
-{% set sha256 = "f5eeb8b3b76acaaca0e0f866f57f9349d78fccb13d10af6e4f5b2a0504ff70d4" %}
+{% set version = "2.10.0" %}
+{% set sha256 = "b3e7cf03cff8c80c5e833b94f5acd08da7a2f8633cdcc475a23589a73d8d03d6" %}
 
 package:
   name: {{ name|lower }}
@@ -23,7 +23,7 @@ requirements:
     - python >=3.5
     - setuptools
   run:
-    - cryptography >=1.7.2,<=36.0.2
+    - cryptography >=1.7.2
     - future >=0.15.0
     - igwn-auth-utils >=0.3.1
     - python >=3.5
