@@ -1,11 +1,11 @@
-About ligo-gracedb
-==================
+About ligo-gracedb-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ligo-gracedb-feedstock/blob/main/LICENSE.txt)
 
 Home: https://ligo-gracedb.readthedocs.io/
 
 Package license: GPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ligo-gracedb-feedstock/blob/main/LICENSE.txt)
 
 Summary: A Python package for accessing the GraceDB API
 
