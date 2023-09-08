@@ -1,6 +1,6 @@
 {% set name = "ligo-gracedb" %}
-{% set version = "2.11.0" %}
-{% set sha256 = "88759dc6602e9ddc792379d188b78e6a7434c77717619d7438f1bf028a1d54da" %}
+{% set version = "2.12.0" %}
+{% set sha256 = "f35be8fc21804d7fd11b8131fe64e5178be521711c4d0e0f883860330e3e8f03" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
@@ -20,15 +20,14 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python >=3.6
     - setuptools
   run:
     - cryptography >=1.7.2
     - future >=0.15.0
-    - igwn-auth-utils >=0.3.1,<1.0.0a0
-    - python >=3.5
+    - igwn-auth-utils >=1.0.0
+    - python >=3.6
     - requests >=2.6.0
-    - six >=1.9.0
 
 test:
   # run_test.py is run automatically
@@ -39,6 +38,7 @@ test:
   commands:
     # check requirements
     - python -m pip check
+    - python -m pip show ligo-gracedb
     # run test suite (without integration tests, which require network)
     - python -m pytest --pyargs ligo.gracedb -ra -m "not integration"
     # basic test
