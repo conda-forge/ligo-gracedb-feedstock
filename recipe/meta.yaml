@@ -20,15 +20,14 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python >=3.6
     - setuptools
   run:
     - cryptography >=1.7.2
     - future >=0.15.0
-    - igwn-auth-utils >=0.3.1,<1.0.0a0
-    - python >=3.5
+    - igwn-auth-utils >=1.0.0
+    - python >=3.6
     - requests >=2.6.0
-    - six >=1.9.0
 
 test:
   # run_test.py is run automatically
@@ -39,6 +38,7 @@ test:
   commands:
     # check requirements
     - python -m pip check
+    - python -m pip show ligo-gracedb
     # run test suite (without integration tests, which require network)
     - python -m pytest --pyargs ligo.gracedb -ra -m "not integration"
     # basic test
