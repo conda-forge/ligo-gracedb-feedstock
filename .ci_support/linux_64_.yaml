@@ -1,5 +1,7 @@
+ace:
+- 8.0.1
 cdt_name:
-- cos6
+- cos7
 channel_sources:
 - conda-forge
 channel_targets:
