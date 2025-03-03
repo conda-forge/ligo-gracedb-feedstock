@@ -1,6 +1,6 @@
 {% set name = "ligo-gracedb" %}
-{% set version = "2.13.0" %}
-{% set sha256 = "d378cee66c1e46c8b0db035233091378e234d166c95d13198bf725a1bfe6130c" %}
+{% set version = "2.13.2" %}
+{% set sha256 = "80fb19d7afa4fa6acb7c041759148a87511a9d5e1f4d00731fcd76889397c085" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
