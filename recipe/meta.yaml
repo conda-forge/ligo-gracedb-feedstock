@@ -1,6 +1,6 @@
 {% set name = "ligo-gracedb" %}
-{% set version = "2.14.1" %}
-{% set sha256 = "2f2bb3787b403f2679bbfac82c0bea410a22eae54a5322344ab0e9d653c182ce" %}
+{% set version = "2.14.2" %}
+{% set sha256 = "cd93fd50c7a999f88ef969826e678bdf99e242090b6d439d230e5f4f8043f39b" %}
 
 package:
   name: {{ name|lower }}
