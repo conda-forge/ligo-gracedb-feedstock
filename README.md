@@ -19,7 +19,6 @@ about candidate events from gravitational-wave searches and
 associated follow-ups.  `ligo-gracedb` provides a Python-based
 client tool for facilitating interactions with the GraceDB API.
 
-
 Current build status
 ====================
 
