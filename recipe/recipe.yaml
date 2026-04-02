@@ -1,0 +1,68 @@
+schema_version: 1
+
+context:
+  name: ligo-gracedb
+  version: 2.15.6
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: 55c808acbcc7ab536bac143cce4fff1e09a377738c84cb590c2d055d75c99cbc
+
+build:
+  noarch: python
+  number: 0
+  python:
+    entry_points:
+      - gracedb = ligo.gracedb.cli.client:main
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools
+  run:
+    - cryptography >=1.7.2
+    - future >=0.15.0
+    - igwn-auth-utils >=1.0.0
+    - python >=${{ python_min }}
+    - requests >=2.6.0
+
+tests:
+  - requirements:
+      run:
+        - mock
+        - pip
+        - pytest
+        - python ${{ python_min }}.*
+    script:
+      # Check metadata
+      - python -m pip check
+      - python -m pip show ligo-gracedb
+      # Run test suite
+      - python -m pytest --pyargs ligo.gracedb -ra -m "not integration"
+      # Check entry points
+      - gracedb --help
+
+about:
+  summary: A Python package for accessing the GraceDB API
+  description: |
+    The Gravitational-wave Candidate Event Database (GraceDB) is a
+    web service designed for aggregating and communicating information
+    about candidate events from gravitational-wave searches and
+    associated follow-ups.  `ligo-gracedb` provides a Python-based
+    client tool for facilitating interactions with the GraceDB API.
+  homepage: https://ligo-gracedb.readthedocs.io/
+  repository: https://git.ligo.org/lscsoft/gracedb-client.git
+  documentation: https://ligo-gracedb.readthedocs.io/
+  license: GPL-3.0-or-later
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - aepace
+    - duncanmmacleod
