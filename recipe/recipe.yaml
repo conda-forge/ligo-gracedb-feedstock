@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: ligo-gracedb
-  version: "2.16.0"
+  version: "2.16.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: 6d2071c182088daf6cfabfa354bfd55c0af84e7a6e5ff5a8a017d03757b523d2
+  sha256: 71793ffaef49faf9d0fdf9af06060da9b26361ad4c31876a8ce90563978ca013
 
 build:
   noarch: python
